@@ -2,6 +2,8 @@
 'use strict';
 
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   resolve: {
@@ -30,6 +32,14 @@ module.exports = {
       query: {
         presets: ['es2015', 'react']
       }
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader")
     }]
-  }
+  },
+
+  plugins: [
+    new ExtractTextPlugin('bundle.css'),
+    new OptimizeCssAssetsPlugin()
+  ]
 };

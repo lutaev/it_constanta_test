@@ -28,12 +28,8 @@ export default React.createClass({
 
         return (
             <div className="person">
-                <div>
-                    <textarea className="form-control" onChange={this.personTextChange} defaultValue={this.props.text}/>
-                </div>
-                <div className="text-left">
-                    <button className="btn btn-sm" onClick={this.toggle}>{buttonText}</button>
-                </div>
+                <textarea onChange={this.personTextChange} defaultValue={this.props.text}/>
+                <button onClick={this.toggle}>{buttonText}</button>
             </div>
         )
     }

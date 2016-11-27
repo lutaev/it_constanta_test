@@ -24,18 +24,16 @@ export const Layout =  React.createClass ({
 
     render() {
         let listClassName = this.state.showMenu ? 'col-xs-8' : 'col-xs-12';
-        let menuClassName = this.state.showMenu ? 'col-xs-4 menu' : 'hidden';
+        let menuClassName = this.state.showMenu ? '' : 'hidden';
         let menuText = this.state.showMenu ? 'Close menu' : 'Show menu';
 
         return (
-            <div className="row">
-                <div className={listClassName}>
-                    <div id="list-container">
-                        <List persons={this.props.persons}/>
-                        <button className="btn btn-primary btn-sm" id="menu-button" onClick={this.toggleMenu}>{menuText}</button>
-                    </div>
+            <div id="container">
+                <div id="list-container" className={listClassName}>
+                    <List persons={this.props.persons}/>
+                    <button id="menu-button" onClick={this.toggleMenu}>{menuText}</button>
                 </div>
-                <div className={menuClassName}>
+                <div id="menu-container" className={menuClassName}>
                     <Menu persons={this.props.persons} newText={this.props.newText}/>
                 </div>
             </div>

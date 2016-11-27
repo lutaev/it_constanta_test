@@ -29,11 +29,10 @@ export default React.createClass({
                     })}
                 </div>
                 <hr/>
-                <div className="new-person">
-                    <textarea className="form-control" onChange={this.newTextChange} value={this.props.newText}/>
-                    <div className="text-right">
-                        <button className="btn btn-sm" onClick={this.addPerson}>Add person</button>
-                    </div>
+                <br/>
+                <div id="new-person">
+                    <textarea onChange={this.newTextChange} value={this.props.newText}/>
+                    <button onClick={this.addPerson}>Add person</button>
                 </div>
             </div>
         )
